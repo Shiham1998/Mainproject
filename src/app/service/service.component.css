@@ -1,0 +1,86 @@
+.icons-container{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.icons-container .icons{
+    background-color: white;
+    border: 1rem solid rgba(0, 0,0,.1);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+.icons-container .icons img{
+    height: 5rem;
+    margin-right: 2rem;
+}
+.icons-container .icons h3{
+    color: #333;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+}
+.icons-container .icons span{
+    color: #555;
+  
+    font-size: 1.3rem;
+}
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+.heading span{
+    background: var(--green);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0,93% 50%,100% 99%,0% 100%,7% 50%,0% 0%);
+}
+.newsletter{
+    background:url(/assets/newsletter-bg.jpg) no-repeat;
+    background-size: cover;
+   
+    background-position: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    border-radius: 24px;
+    box-shadow:#555
+}
+.newsletter h3{
+    font-size: 3rem;
+    color: var(--black);
+}
+.newsletter form{
+    max-width: 55rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    background: rgba(0,0,0,.1);
+}
+.newsletter form .box{
+    width: 100%;
+    padding: .7rem 1.5rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none
+}
+.newsletter form .btn{
+    margin-top: 0;
+}
+form{
+    align-items: center;
+}
+h2 span{
+    background: var(--green);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0,93% 50%,100% 99%,0% 100%,7% 50%,0% 0%);
+}

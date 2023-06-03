@@ -1,0 +1,169 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="header">Home</a></li>
+    <li class="breadcrumb-item"><a href="cart">cart</a></li>
+  </ol>
+</nav>
+<section class="cart_section card">
+  <div class="container">
+    <h2 style="font-style: italic;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Shopping-List</h2>
+    
+    <div *ngIf="getCartDetails.length !=0">
+      <div class="table-responsive ">
+        <table class="table-hover">
+          <tr
+            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif;background-color: green;color: white;font-style: italic;">
+            <th style="text-align: center;">ProductName</th>
+            <th style="text-align: center;">Image</th>
+            <th style="text-align: center;" >Price</th>
+            <th style="text-align: center;">Quantity</th>
+            <th style="text-align: center;">Total</th>
+            <th style="text-align: center;">Remove item</th>
+          </tr>
+          <tr *ngFor="let getCartDetail of getCartDetails">
+            <td style="font-size: 30px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+              {{getCartDetail.name}}</td>
+            
+            <td style="transition: 0.3s;text-transform: uppercase;border-radius: 14px;" class="im"><img src="{{getCartDetail.img}}"
+                width="230px"></td>
+            <td style="font-weight: bolder;">₹ {{getCartDetail.amt}}</td>
+            <td>
+              <div class="content">
+                <button type="button" class="btn" (click)="incQnt(getCartDetail.prodId,getCartDetail.qnt)"><i
+                    style="font-size: 20px;font-weight: bold;" class="las la-plus"></i></button>
+                <span style="font-size: 20px;color: red;">{{getCartDetail.qnt}}</span>
+                <button type="button" class="btn" (click)="decQnt(getCartDetail.prodId,getCartDetail.qnt)"><i
+                    style="font-size: 20px; font-weight: bold;" class="las la-minus"></i></button>
+              </div>
+            </td>
+            <td style="font-weight: bold;font-weight: 900;">₹ {{getCartDetail.qnt * getCartDetail.amt| number }}</td>
+            <td style="font-size: 50px;color: red;" (click)="singleDelete(getCartDetail.prodId)"><i
+                class="las la-trash-alt"></i></td>
+
+          </tr>
+      </table>
+      </div>
+      &nbsp;
+      <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6 text-right">
+        </div>
+      </div>
+
+      <h2>-------------------------------------------------------------------</h2>
+      <h2 style="text-align: left;font-weight: bold;font-style: italic;">Order Summary</h2>
+      <div class="row">
+        <div class="col-6">
+          <div class="card" style="border-radius: 25px;width: 395px;align-content: center;"
+            *ngFor="let getCartDetail of getCartDetails">
+
+            <ol class="list-group list-group-numbered">
+
+              <div class="card">
+
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-start list-group-item list-group-item-primary">
+
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Item Name</div>
+                    <p style="color:red;font-weight: 500;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                      {{myDate | date:'MMM d, y, h:mm a'}}</p>
+                  </div>
+                  <span class="fh"
+                    style="font-style: italic;font-weight: 900;font-size: 24px;">{{getCartDetail.name}}</span>
+
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-start list-group-item list-group-item-primary">
+
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Quantity</div>
+
+                  </div>
+                  <span style="font-size: 20px;color: red;">{{getCartDetail.qnt}}</span>
+
+                </li>
+
+
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-start list-group-item list-group-item-dark">
+
+
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">Total Price <i class="las la-money-bill-wave-alt" style="font-size: 40px;"></i>
+                    </div>
+
+                  </div>
+                  <span class="badge bg-danger rounded-pill" style="font-size: 20px;">₹ {{getCartDetail.qnt *
+                    getCartDetail.amt | number }}</span>
+                </li>
+              </div>
+
+            </ol>
+          </div>
+        </div>
+
+        <div class="col-6 list-group list-group-flush" style="margin-bottom: 5%;">
+          
+        <div class="bg-pay p-3" style="background-color:#999999;width:420px;border-radius:24px"> <span class="font-weight-bold">Order Recap</span>
+         
+          <h3 style="font-weight: bolder;color:black;">OrderTotal <span style="margin-left: 13%;">₹ {{total}}</span>
+          </h3>
+     
+          -------------------------------------------------
+          <h6 style="font-weight: bolder;color:white;">Discount <span style="color: red;font-size:20px">10% </span><span
+            style="margin-left: 35%;"> ₹{{total-10}}</span> </h6>
+          
+          <h6 style="font-weight: bolder;color:white;">Shipping + Tax(CGST,SGST) <span
+              style="margin-left: 12%;">₹50</span> </h6>
+              
+           
+          -------------------------------------------------
+          <h3 style="font-weight: bolder;color:black;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Total Amount <span style="margin-left: 11%;">₹
+              {{total+50-10}}</span> </h3>
+
+          -------------------------------------------------
+
+          <div class="bt">
+              <button class="btn btn-success" type="button"  routerLink="/login" >
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+           Pay ₹ {{total+50-10}}
+          </button>
+      </div>
+      </div>
+      </div>
+     
+      <div class="row">
+        <div class="col-md-6">
+         
+        </div>
+        &nbsp;
+        <div class="col-md-6 text-right">
+          <button routerLink="/" class="btn btn-primary" style="align-items: center;border-radius: 35px;">Continue
+            Shopping</button>
+          <button type="button" class="btn btn-primary"
+            style="align-items: center;border-radius: 35px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"
+            (click)="removeall()"><i class="las la-trash-alt" style="font-size: 20px;"></i>Remove all Items</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<ng-container *ngIf="getCartDetails.length ==0">
+  <div class="contanier" style="align-items:center;">
+    <div class="card" style="align-items: center;">
+      <h2 class="card-title" style="font-weight: 900;font-size: 40px;">My Cart</h2>
+
+      <div class="center" style="align-items: center;">
+        <img src="https://static.wixstatic.com/media/7742ef_dfe620d0354b471b8620fcb2c3a46e62~mv2.gif" alt="hhhh">
+
+        <h2 style="color: red;text-align: center;font-family:cursive;">Your cart is Empty</h2>
+        <h6 style="color: red;text-align: center;"> Add something to make me happy :)</h6>
+        <button routerLink="/cart" class="btn btn-primary" style="align-items: center;margin-left: 160px;"><i
+            class="las la-cart-arrow-down" style="font-size: 30px;"></i>ShopNow</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

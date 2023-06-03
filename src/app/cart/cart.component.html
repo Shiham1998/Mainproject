@@ -1,0 +1,212 @@
+
+  <section class="banner-container" style="margin-left: 10px;border-radius: 25px;">
+    <div class="banner">
+        <img src="/assets/bg1.jpg" width="100%" style="border-radius: 25px;">
+        <div class="content">
+            <h3>Special offer</h3>
+            <p>Upto 45% off</p>
+    
+        </div>
+    </div>
+    <div class="banner"  style="margin-left: 10px;border-radius: 25px;">
+        <img src="/assets/image_5.jpg" width="100%"style="border-radius: 25px;">
+        <div class="content">
+            <h3 style="color: white;">Limited offer</h3>
+            <p style="color: white;">Upto 50% off</p>
+           
+        </div>
+    </div>
+    </section>
+    &nbsp;
+ 
+
+<section class="product ">
+    <div class="container text-center">
+        <h2 class="heading" style="font-weight: 500;">Our Fresh <span> Fruits<i class="lab la-apple" style="font-size:40px ;"></i></span></h2>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let category of  productArray">
+                <div class="box">
+                    
+                    <div class="product_image">
+                      
+                        <img src="{{category.img}}" width="230px">
+                    </div>
+                    <div class="name">
+                        <h1 style="font-size: 30px;font-family:Georgia, 'Times New Roman', Times, serif;font-style: italic;">{{category.name}}</h1>
+                    </div>
+                    <div class="content">
+                        <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">₹ {{category.amt}}</h4>
+                        <button type="button" class="btn" (click)="inc(category)" style="background-color: green;"><i style="font-size: 20px;font-weight: bold;"class="las la-plus"></i></button>
+                        <span style="font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{category.qnt}} </span><span style="color: red;">kg</span>
+                        
+                        <button type="button" class="btn" (click)="dec(category)" style="background-color: green;"><i style="font-size: 20px; font-weight: bold;"class="las la-minus"></i></button>
+                        &nbsp;
+                    </div>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"  (click)="addCart(category)" data-bs-target="#exampleModal">
+                        <i class="las la-cart-plus" style="font-size: 30px;"></i> Add to Cart
+                      </button>
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                    
+                        <div class="modal-dialog modal-dialog-centered" >
+                          <div class="modal-content"style="background-color:gray;">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="background-color: white;">
+                                Item Added to the Cart
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/add">Go to Cart</button>
+                              <button type="button" class="btn btn-primary"data-bs-dismiss="modal">OK</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+   
+                </div>
+            </div>
+            
+        </div>
+
+         <!--secondcart-->
+         <h2 class="heading" style="font-weight: 500;">Our Fresh <span style="background-color: green;"> Vegetables<i class="las la-carrot" style="font-size:40px ;"></i></span></h2>
+         <div class="row">
+            <div class="col-md-3" *ngFor="let category of  productArray2">
+                <div class="box">
+                    
+                    <div class="product_image">
+                      
+                        <img src="{{category.img}}" width="230px">
+                    </div>
+                    <div class="name">
+                        <h1 style="font-size: 30px;font-family:Georgia, 'Times New Roman', Times, serif;font-style: italic;">{{category.name}}</h1>
+                    </div>
+                    <div class="content">
+                        <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">₹ {{category.amt}}</h4>
+                        <button type="button" class="btn" (click)="inc(category)" style="background-color: green;"><i style="font-size: 20px;font-weight: bold;"class="las la-plus"></i></button>
+                        <span style="font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{category.qnt}}</span><span style="color: red;"> kg</span>
+                        
+                        <button type="button" class="btn" (click)="dec(category)" style="background-color: green;"><i style="font-size: 20px; font-weight: bold;"class="las la-minus"></i></button>
+                        &nbsp;
+                    </div>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"  (click)="addCart(category)" data-bs-target="#exampleModal">
+                        Add to Cart
+                      </button>
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                    
+                        <div class="modal-dialog modal-dialog-centered" >
+                          <div class="modal-content"style="background-color:gray;">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="background-color: white;">
+                                Item Added to the Cart
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/add">Go to Cart</button>
+                              <button type="button" class="btn btn-primary"data-bs-dismiss="modal">OK</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>    
+    </div>
+    <h2 class="heading" style="font-weight: 500;">Our Fresh <span style="background-color: green;"> Biscuits<i class="las la-cookie-bite" style="font-size:40px ;"></i></span></h2>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let category of  productArray3">
+            <div class="box">
+                
+                <div class="product_image">
+                  
+                    <img src="{{category.img}}" width="230px">
+                </div>
+                <div class="name">
+                    <h1 style="font-size: 30px;font-family:Georgia, 'Times New Roman', Times, serif;font-style: italic;">{{category.name}}</h1>
+                </div>
+                <div class="content">
+                    <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"><del style="color: red;">₹ {{category.disc}}</del> ₹ {{category.amt}}</h4>
+                    <button type="button" class="btn" (click)="inc(category)" style="background-color: green;"><i style="font-size: 20px;font-weight: bold;"class="las la-plus"></i></button>
+                    <span style="font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{category.qnt}}</span>
+                    
+                    <button type="button" class="btn" (click)="dec(category)" style="background-color: green;"><i style="font-size: 20px; font-weight: bold;"class="las la-minus"></i></button>
+                    &nbsp;
+                </div>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"  (click)="addCart(category)" data-bs-target="#exampleModal">
+                    Add to Cart
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                
+                    <div class="modal-dialog modal-dialog-centered" >
+                      <div class="modal-content"style="background-color:gray;">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="background-color: white;">
+                            Item Added to the Cart
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/add">Go to Cart</button>
+                          <button type="button" class="btn btn-primary"data-bs-dismiss="modal">OK</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+     
+</div>
+
+<h2 class="heading" style="font-weight: 500;">Our Fresh <span> Choclates<i class="las la-candy-cane"></i></span></h2>
+<div class="row">
+    <div class="col-md-3" *ngFor="let category of  productArray4">
+        <div class="box">
+            
+            <div class="product_image">
+              
+                <img src="{{category.img}}" width="230px">
+            </div>
+            <div class="name">
+                <h1 style="font-size: 30px;font-family:Georgia, 'Times New Roman', Times, serif;font-style: italic;">{{category.name}}</h1>
+            </div>
+            <div class="content">
+                <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"><del style="color: red;">₹ {{category.dis}}</del>₹ {{category.amt}}</h4>
+                <button type="button" class="btn" (click)="inc(category)" style="background-color: green;"><i style="font-size: 20px;font-weight: bold;"class="las la-plus"></i></button>
+                <span style="font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{category.qnt}} </span>
+                
+                <button type="button" class="btn" (click)="dec(category)" style="background-color: green;"><i style="font-size: 20px; font-weight: bold;"class="las la-minus"></i></button>
+                &nbsp;
+            </div>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal"  (click)="addCart(category)" data-bs-target="#exampleModal">
+                <i class="las la-cart-plus" style="font-size: 30px;"></i> Add to Cart
+              </button>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            
+                <div class="modal-dialog modal-dialog-centered" >
+                  <div class="modal-content"style="background-color:gray;">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Cart Items</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="background-color: white;">
+                        Item Added to the Cart
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/add">Go to Cart</button>
+                      <button type="button" class="btn btn-primary"data-bs-dismiss="modal">OK</button>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
+        </div>
+    </div>
+    
+    
+</div>
+    </div>
+   
+</section>

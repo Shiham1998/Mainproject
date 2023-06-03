@@ -1,0 +1,387 @@
+/* .card{
+    margin-top: 40px;
+    margin-right: 80px;
+    border: 1px solid blue;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    top: 15%;
+    left: 1%;
+  
+    color:black;
+  
+} */
+/* body {
+    background: #ddd;
+    min-height: 100vh;
+    vertical-align: middle;
+    display: flex
+    }
+    
+    .card {
+    margin: auto;
+    width: 600px;
+    padding: 3rem3.5rem;
+    box-shadow: 06px20px0rgba(0, 0, 0, 0.19)
+    }
+    
+    .mt-50 {
+    margin-top: 50px
+    }
+    
+    .mb-50 {
+    margin-bottom: 50px
+    }
+    
+    @media(max-width:767px) {
+    .card {
+    width: 90%;
+    padding: 1.5rem
+        }
+    }
+    
+    @media(height:1366px) {
+    .card {
+    width: 90%;
+    padding: 8vh
+        }
+    }
+    
+    .card-title {
+    font-weight: 700;
+    font-size: 2.5em
+    }
+    
+    .nav {
+    display: flex
+    }
+    
+    .navul {
+    list-style-type: none;
+    display: flex;
+    padding-inline-start: unset;
+    margin-bottom: 6vh
+    }
+    
+    .navli {
+    padding: 1rem
+    }
+    
+    .navlia {
+    color: black;
+    text-decoration: none
+    }
+    
+    .active {
+    border-bottom: 2pxsolidblack;
+    font-weight: bold
+    }
+    
+    input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(143, 156, 160, 0.993);
+    width: 100%;
+    min-width: unset;
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0
+    }
+    
+    forma {
+    color: grey;
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: bold
+    }
+    
+    forma:hover {
+    color: grey;
+    text-decoration: none
+    }
+    
+    form.row {
+    margin: 0;
+    overflow: hidden
+    }
+    
+    form.row-1 {
+    border: 1pxsolidrgba(0, 0, 0, 0.137);
+    padding: 0.5rem;
+    outline: none;
+    width: 100%;
+    min-width: unset;
+    border-radius: 5px;
+    background-color: rgba(221, 228, 236, 0.301);
+    border-color: rgba(221, 228, 236, 0.459);
+    margin: 2vh0;
+    overflow: hidden
+    }
+    
+    form.row-2 {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 00.8rem
+    }
+    
+    form.row.row-2 {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 00.8rem
+    }
+    
+    form.row.col-2,
+    .col-7,
+    .col-3 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 01vh
+    }
+    
+    form.row.col-2 {
+    padding-right: 0
+    }
+    
+    #card-header {
+    font-weight: bold;
+    font-size: 0.9rem
+    }
+    
+    #card-inner {
+    font-size: 0.7rem;
+    color: gray
+    }
+    
+    .three.col-7 {
+    padding-left: 0
+    }
+    
+    .three {
+    overflow: hidden;
+    justify-content: space-between
+    }
+    
+    .three.col-2 {
+    border: 1pxsolidrgba(0, 0, 0, 0.137);
+    padding: 0.5rem;
+    outline: none;
+    width: 100%;
+    min-width: unset;
+    border-radius: 5px;
+    background-color: rgba(221, 228, 236, 0.301);
+    border-color: rgba(221, 228, 236, 0.459);
+    margin: 2vh0;
+    width: fit-content;
+    overflow: hidden
+    }
+    
+    .three.col-2input {
+    font-size: 0.7rem;
+    margin-left: 1vh
+    }
+    
+    #but,b{
+    width: 100%;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+    color: rgb(68, 60, 60);
+    justify-content: center;
+    padding: 2vh0;
+    margin-top: 3vh
+    }
+    
+    #but:focus,b:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+  
+    transition: none
+    }
+    
+    #but:hover,b:hover {
+    background-color: rgb(190, 196, 193)
+    }
+    
+    input:focus::-webkit-input-placeholder {
+    color: transparent
+    }
+    
+    input:focus:-moz-placeholder {
+    color: transparent
+    }
+    
+    input:focus::-moz-placeholder {
+    color: transparent
+    }
+    
+    input:focus:-ms-input-placeholder {
+    color: transparent
+    }
+    
+    #but{
+    width: 100%;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+    color: rgb(68, 60, 60);
+    justify-content: center;
+    padding: 2vh0;
+    margin-top: 3vh;
+    
+    }
+    
+    #but:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+   
+    transition: none
+    }
+    
+    #but:hover {
+    background-color: rgb(190, 196, 193)
+    }
+    
+    #b{
+    width: 100%;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+    color: rgb(68, 60, 60);
+    justify-content: center;
+    padding: 2vh0;
+    margin-top: 3vh;
+    }
+    
+    #b:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+
+    transition: none;
+    }
+    
+    #b:hover {
+    background-color: rgb(190, 196, 193)
+    }
+     */
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  background:green;
+  overflow: hidden;
+}
+::selection{
+  background: rgba(26,188,156,0.3);
+}
+.container{
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 170px auto;
+}
+.wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  height: 90px;
+  background: green;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+  border-color: green;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+  color: #999;
+}
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: green;
+  border: 1px solid green;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+  color: green;
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+.wrapper form .button input{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: green;
+  border: 1px solid green;
+  cursor: pointer;
+}
+form .button input:hover{
+  background: green;
+}
+.wrapper form .signup-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+}
+.wrapper form .signup-link a{
+  color: #16a085;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}

@@ -1,0 +1,140 @@
+<!-- <div class="container">
+  
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h2 style="font-style: italic;">Create New Account</h2>
+                    <h5>Welcome!!!</h5><hr>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="signup()" >
+                    <div class="mb-3">
+                      <label  class="form-label" style="font-weight: bold;font-size: 20px;">Name:</label>
+                     
+                    <input formControlName="name" [ngClass]="{'is-invalid':submitted && signupForm.controls.name.errors}"placeholder="Enter Name" type="text" class="form-control">
+                     <div *ngIf="submitted && signupForm.controls.name.errors" class="text-danger">
+                       <div *ngIf="submitted && signupForm.controls.name.errors.required">
+                      Name is Required
+                       </div>
+                     </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"style="font-weight: bold;font-size: 20px;">Mobile Number:</label>
+                        <input formControlName="mobile" [ngClass]="{'is-invalid':submitted && signupForm.controls.mobile.errors}"placeholder="Mobile Number" type="number" class="form-control">
+                        <div *ngIf="submitted && signupForm.controls.mobile.errors" class="text-danger">
+                          <div *ngIf="submitted && signupForm.controls.mobile.errors.required">
+                         Mobile Number is Required
+                          </div>
+                          
+                        </div>
+                      </div>
+                    <div class="mb-3">
+                        <label  class="form-label"style="font-weight: bold;font-size: 20px;">Email address</label>
+                        <input formControlName="email" [ngClass]="{'is-invalid':submitted && signupForm.controls.email.errors}" placeholder="Enter Email" type="email" class="form-control">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div *ngIf="submitted && signupForm.controls.email.errors" class="text-danger">
+                          <div *ngIf="submitted && signupForm.controls.email.errors.required">
+                         Email is Required
+                          </div>
+                          <div *ngIf="submitted && signupForm.controls.email.errors.email">
+                            Email is not valid
+                             </div>
+                        </div>
+                      </div>
+                    <div class="mb-3">
+                      <label  class="form-label"style="font-weight: bold;font-size: 20px;">Password</label>
+                      <input formControlName="password" [ngClass]="{'is-invalid':submitted && signupForm.controls.password.errors}" placeholder="Password" type="password" class="form-control">
+
+                      <div *ngIf="submitted && signupForm.controls.password.errors" class="text-danger">
+                        <div *ngIf="signupForm.controls.password.errors.required">
+                       Password is Required
+                        </div>
+                        <div *ngIf="signupForm.controls.password.errors.minLength">
+                          Password must be atleast 8 characters
+                           </div>
+                      </div>
+                    </div> -->
+                    <!-- <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                    
+                    <!-- <button type="submit" class="btn btn-primary" >Signup</button>
+                  </form>
+                  <a routerLink="/login" style="color: white;">Already Account ? Click to login !</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+  <a class="navbar-brand" href="#"><strong style="font-weight: 900;font-style: italic;text-align: center;margin-left: 90px;font-size: 25px;">Parcel<span style="color: red;">2Go</span> &nbsp;<span class="badge bg-success rounded-pill" style="font-size: 20px;">.com</span></strong> <i class="las la-shipping-fast" style="font-size: 50px;color: red;"></i> </a>
+  <div class="wrapper">
+    <div class="title"><span>Create an Account</span></div>
+    <h4 style="font-size: 10px; text-align: center;font-weight: 500;">Enter your personal details to create account</h4>
+    <form [formGroup]="signupForm" (ngSubmit)="signup()" >
+      <label  class="form-label"style="font-weight: bold;font-size: 15px;" >Name:</label>
+      <div class="row">
+        
+        <i class="las la-user"></i>
+       
+        <input formControlName="name"  type="name" [ngClass]="{'is-invalid':submitted && signupForm.controls.name.errors}"placeholder="Enter Name" type="text" class="form-control">
+        <div *ngIf="submitted && signupForm.controls.name.errors" class="text-danger">
+          <div *ngIf="submitted && signupForm.controls.name.errors.required">
+         Name is Required
+          </div>
+        </div>
+      </div>
+      &nbsp; &nbsp;
+      <label  class="form-label" style="font-weight: bold;font-size: 15px;">Mobile Number:</label>
+      <div class="row">
+      
+          <i class="las la-phone"></i>
+           <input formControlName="mobile" [ngClass]="{'is-invalid':submitted && signupForm.controls.mobile.errors}"placeholder="+91" type="number" class="form-control">
+           <div *ngIf="submitted && signupForm.controls.mobile.errors" class="text-danger">
+              <div *ngIf="submitted && signupForm.controls.mobile.errors.required">
+             Mobile Number is Required
+              </div>
+              
+            </div>
+        </div>
+        &nbsp; &nbsp;
+        <label  class="form-label" style="font-weight: bold;font-size: 15px;">Email:</label>
+        <div class="row">
+
+          <i class="las la-envelope"></i>
+          <input formControlName="email"  type="email" [ngClass]="{'is-invalid':submitted && signupForm.controls.email.errors}"class="form-control"type="text" placeholder="Email or Phone" required>
+          <div *ngIf="submitted && signupForm.controls.email.errors" class="text-danger">
+            <div *ngIf="submitted && signupForm.controls.email.errors.required">
+           Email is Required
+            </div>
+            <div *ngIf="submitted && signupForm.controls.email.errors.email" style="font-weight: 700;font-size: 10px;">
+              Email is not valid
+               </div>
+          </div>
+        </div>
+      &nbsp; &nbsp;
+      <label  class="form-label" style="font-weight: bold;font-size: 15px;">Password:</label>
+      <div class="row">
+      
+        <i class="las la-lock"></i>
+        <input  formControlName="password" [ngClass]="{'is-invalid':submitted && signupForm.controls.password.errors}" type="password" class="form-control" type="password" placeholder="Password" required>
+        
+        <div *ngIf="submitted && signupForm.controls.password.errors" class="text-danger" > 
+          <div *ngIf="signupForm.controls.password.errors.required">
+         Password is Required
+        </div>
+          <div *ngIf="signupForm.controls.password.errors.minLength">
+            Password must be atleast 8 characters
+             </div>
+        </div>
+      </div>
+   &nbsp; &nbsp;
+      <div class="row button">
+        <!-- <input type="submit" value="Create Account"> -->
+        <button [disabled]=signupForm.invalid type="Submit" class="btn btn-success" style="background-color: green;">Create Account</button>
+      </div>
+      <div class="signup-link">Already have an acoount <a href="#" routerLink="/login">Login</a></div>
+      <h6 style="text-align: center;">Designed By <br><a href>www.Parcel2go.com</a></h6> 
+    </form>
+  </div>
+</div>

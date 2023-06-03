@@ -1,0 +1,46 @@
+
+ <div class="container">
+ <a class="navbar-brand" href="#"><strong style="font-weight: 900;font-style: italic;text-align: center;margin-left: 90px;font-size: 25px;">Parcel<span style="color: red;">2Go</span> &nbsp;<span class="badge bg-success rounded-pill" style="font-size: 20px;">.com</span></strong> <i class="las la-shipping-fast" style="font-size: 50px;color: red;"></i> </a>
+  <div class="wrapper">
+    <div class="title"><span>Login Form</span></div>
+    <h4 style="font-size: 10px; text-align: center;font-weight: 500;">Enter your username & password to login</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <label for="exampleInputEmail1" class="form-label" style="font-weight: bold;font-size: 15px;">Email</label>
+      <div class="row">
+     
+        <i class="las la-user"></i>
+       
+        <input formControlName="email"  type="email" [ngClass]="{'is-invalid':submitted && loginForm.controls.email.errors}"class="form-control"type="text" placeholder="Email or Phone" required>
+        <div *ngIf="submitted && loginForm.controls.email.errors" class="text-danger">
+          <div *ngIf="submitted && loginForm.controls.email.errors.required">
+         Email is Required
+          </div>
+          <div *ngIf="submitted && loginForm.controls.email.errors.email" style="font-weight: 700;font-size: 10px;">
+            Email is not valid
+             </div>
+        </div>
+      </div>
+      &nbsp;
+      <label for="exampleInputEmail1" class="form-label"style="font-weight: bold;font-size: 15px;">Password</label>
+      <div class="row">
+        <i class="las la-lock"></i>
+        <input  formControlName="password" [ngClass]="{'is-invalid':submitted && loginForm.controls.password.errors}" type="password" class="form-control" type="password" placeholder="Password" required>
+        <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger" >
+          <div *ngIf="loginForm.controls.password.errors.required">
+         Password is Required
+          </div>
+          <div *ngIf="loginForm.controls.password.errors.minLength">
+            Password must be atleast 8 characters
+             </div>
+        </div>
+      </div>
+   &nbsp;
+      <div class="row button">
+        <!-- <input [disabled]=loginForm.invalid type="submit" value="Login" routerLink="/header"> -->
+        <button [disabled]=loginForm.invalid type="Submit" class="btn btn-success" style="background-color: green;" routerLink="/payment">Login</button>
+      </div>
+      <div class="signup-link">Not a member? <a href="#"routerLink="/signup">Signup now</a></div>
+     <h6 style="text-align: center;">Designed By <br><a href>www.Parcel2go.com</a></h6> 
+    </form>
+  </div>
+</div>
